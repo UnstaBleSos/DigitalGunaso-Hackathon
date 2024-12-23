@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+
+        form select, 
+        form textarea, 
+        form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        button[type="reset"] {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Complaint Submission Form</h1>
+    <div class="form-container">
+        <form id="grievanceForm" action="handleform.php" method="post" enctype="multipart/form-data">
+            <label for="category">Complaint Department:</label>
+            <select id="category" name="category" required>
+                <option value="">Select department</option>
+                <option value="electricity">Electricity</option>
+                <option value="water">Water</option>
+                <option value="garbage">Garbage</option>
+            </select>
+
+            <label for="subCategory">Category:</label>
+            <select id="subCategory" name="subcategory" required>
+                <option value="">Select category</option>
+            </select>
+
+            <label for="description">Complaint Details:</label>
+            <textarea id="description" name="complaint" placeholder="Describe your complaint here..." required></textarea>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="userdashboard.js"></script>
+</body>
+</html>
